@@ -52,7 +52,7 @@ public class EmbeddingLoader {
     @PostConstruct
     public void loadGitHubEmbeddings(){
         var gitHubDocumentLoader= GitHubDocumentLoader.builder()
-                .gitHubToken("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").build();
+                .gitHubToken("st").build();
         var documents=gitHubDocumentLoader.loadDocuments("vijai-theerkatharisi-rabo", "ollam-ai", "main", "src/main/java", new ApacheTikaDocumentParser());
         var embeddingStoreIngestor=  EmbeddingStoreIngestor.builder()
                 .embeddingModel(embeddingModel)
