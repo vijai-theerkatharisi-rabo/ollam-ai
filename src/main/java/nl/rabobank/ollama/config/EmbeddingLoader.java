@@ -22,8 +22,6 @@ public class EmbeddingLoader {
 
     private final EmbeddingModel embeddingModel;
 
-    private String gitHubToken;
-
     //@PostConstruct
     public void loadEmbeddings() {
         var pathMatcher = FileSystems.getDefault().getPathMatcher("glob:*.txt");
@@ -48,8 +46,8 @@ public class EmbeddingLoader {
     @PostConstruct
     public void loadGitHubEmbeddings(){
         var gitHubDocumentLoader= GitHubDocumentLoader.builder()
-                .gitHubToken(gitHubToken).build();
-        var documents=gitHubDocumentLoader.loadDocuments("vijai-theerkatharisi-rabo", "ollam-ai", "main", "src/main/java", new ApacheTikaDocumentParser());
+                .build();
+        var documents=gitHubDocumentLoader.loadDocuments("vijai-theerkatharisi-rabo", "ollam-ai", "main", "src/main/", new ApacheTikaDocumentParser());
         var embeddingStoreIngestor=  EmbeddingStoreIngestor.builder()
                 .embeddingModel(embeddingModel)
                 .embeddingStore(embeddingStore)
