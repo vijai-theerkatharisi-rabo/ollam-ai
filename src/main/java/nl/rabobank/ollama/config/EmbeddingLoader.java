@@ -1,23 +1,18 @@
 package nl.rabobank.ollama.config;
 
-import dev.langchain4j.data.document.Document;
 import dev.langchain4j.data.document.loader.FileSystemDocumentLoader;
 import dev.langchain4j.data.document.loader.github.GitHubDocumentLoader;
 import dev.langchain4j.data.document.parser.TextDocumentParser;
 import dev.langchain4j.data.document.parser.apache.tika.ApacheTikaDocumentParser;
 import dev.langchain4j.data.segment.TextSegment;
 import dev.langchain4j.model.embedding.EmbeddingModel;
-import dev.langchain4j.rag.content.retriever.EmbeddingStoreContentRetriever;
 import dev.langchain4j.store.embedding.EmbeddingStoreIngestor;
 import dev.langchain4j.store.embedding.inmemory.InMemoryEmbeddingStore;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.nio.file.FileSystems;
-import java.nio.file.PathMatcher;
-import java.util.List;
 
 @Configuration
 @RequiredArgsConstructor
@@ -40,7 +35,7 @@ public class EmbeddingLoader {
                 .build();
         embeddingStoreIngestor.ingest(documents);
     }
-   // @PostConstruct
+    // @PostConstruct
     public void loadCodeEmbeddings(){
         var pathMatcher = FileSystems.getDefault().getPathMatcher("glob:**.java");
         var documents = FileSystemDocumentLoader.loadDocuments("/Users/vijaitheerkatharisi/IdeaProjects/ollam-ai/src/main/java/nl/rabobank/ollama/", pathMatcher, new ApacheTikaDocumentParser());
