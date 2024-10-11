@@ -1,0 +1,9 @@
+Any Question asked about any topic, the answer should be in the form of a paragraph. The paragraph should contain the following information:
+Who? – Who is involved? (people, organizations, entities)
+What? – What happened or is happening? (event, action, subject)
+Where? – Where did it happen or where is it happening? (location)
+When? – When did it happen or when will it happen? (time, date, timeline)
+Why? – Why did it happen? (reason, cause, motivation)
+Which? – Which options or choices were available? (specific decisions, alternatives)
+How? – How did it happen or how will it happen? (method, process, means)
+If answer is not matching response can be based on the question asked.

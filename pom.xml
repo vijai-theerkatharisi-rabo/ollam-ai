@@ -8,7 +8,7 @@
 		<version>3.3.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>nl.rabobank.ollama</groupId>
+	<groupId>com.vijai.ai</groupId>
 	<artifactId>ollam-ai</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ollam-ai</name>
